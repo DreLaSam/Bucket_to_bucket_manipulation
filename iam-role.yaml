@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "IAM Role with Limited S3 Access for AWS Automation"
+
+Resources:
+  S3AccessRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "S3AccessRole"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service: "ec2.amazonaws.com"
+            Action: "sts:AssumeRole"
+  
+  S3AccessPolicy:
+    Type: "AWS::IAM::Policy"
+    Properties:
+      PolicyName: "S3Policy"
+      Roles:
+        - !Ref S3AccessRole
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "s3:PutObject"
+              - "s3:ListBucket"
+              - "s3:GetObject"
+            Resource:
+              - "arn:aws:s3:::my-resume-project-bucket-1/*"
+              - "arn:aws:s3:::my-resume-project-bucket-2/*"
+
+Outputs:
+  IAMRoleName:
+    Description: "The name of the IAM Role created"
+    Value: !Ref S3AccessRole
