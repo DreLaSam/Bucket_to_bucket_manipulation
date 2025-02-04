@@ -38,6 +38,12 @@ To get the project running:
            > python delete_objects.py       
       - Delete a bucket
            > python delete_bucket.py
+Coming soon:
+  - using Terraform instead of CloudFormation for more flexibility and to prepare for any devOps opportunities.
+  - implement Lambda functions to have automatice file processing.
+
+
+Email: dondrelsamuels@gmail.com
   
 
 
