@@ -20,5 +20,27 @@ Before running project:
 
 To get the project running:
   Step 1:
-    git clone https://github.com/dondre-samuels/aws-s3-automation.git
-    cd aws-s3-automation
+    - git clone https://github.com/DreLaSam/aws-s3-automation.git
+    - cd aws-s3-automation
+
+
+  Step 2:
+    - aws cloudformation create-stack --stack-name IAMStack --template-body file://iam-role.yaml --capabilities CAPABILITY_NAMED_IAM
+
+  Step 3: Run scripts
+     - Create buckets
+         > python create_buckets.py
+         
+     - Upload files
+         > python upload_files.py
+
+     - Copy files
+         > python upload_files.py
+
+     - Delete all objects in a bucket
+         > python delete_objects.py
+
+     - Delete a bucket
+         > python delete_bucket.py
+
+
