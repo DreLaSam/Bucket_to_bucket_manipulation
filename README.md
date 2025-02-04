@@ -29,18 +29,17 @@ To get the project running:
 
   Step 3: Run scripts
      - Create buckets
-         > python create_buckets.py
-         
-     - Upload files
-         > python upload_files.py
+         > python create_buckets.py         
+       - Upload files
+           > python upload_files.py        
+      - Copy files
+           > python upload_files.py        
+      - Delete all objects in a bucket
+           > python delete_objects.py       
+      - Delete a bucket
+           > python delete_bucket.py
+  
 
-     - Copy files
-         > python upload_files.py
 
-     - Delete all objects in a bucket
-         > python delete_objects.py
-
-     - Delete a bucket
-         > python delete_bucket.py
-
+   
 
